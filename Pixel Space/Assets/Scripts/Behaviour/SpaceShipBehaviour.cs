@@ -54,7 +54,6 @@ public class SpaceShipBehaviour : MonoBehaviour
     /// </summary>
     private void handleLCL()
     {
-        print("Atirei");
         this.shotBehaviour.shot();
     }
 
