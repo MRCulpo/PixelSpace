@@ -22,11 +22,12 @@ public class SpaceShipShotBehaviour : MonoBehaviour
     /// </summary>
     private bool isShot;
 
-
+    /// <summary>
+    /// 
+    /// </summary>
     void Start()
     {
         this.isShot = true;
-        LOManager.instance.LO_createList("bullet", bullet, 50);
     }
 
     /// <summary>
@@ -34,16 +35,26 @@ public class SpaceShipShotBehaviour : MonoBehaviour
     /// </summary>
     public void shot()
     {
-        if(this.isShot)
+        GameObject _bullet = null;
+
+        if (this.isShot)
         {
             this.isShot = false;
+
             for(int i = 0; i < refShotPosition.Length; i++)
             {
-                GameObject _bullet = LOManager.instance.LO_GetObjectDictionary("bullet");
                 
-                if(_bullet == null)
+                if (bullet.name.Equals("RedBullet"))
+                    _bullet = LOManager.instance.LO_GetObjectDictionary("RedBullet");
+                else if (bullet.name.Equals("BlueBullet"))
+                    _bullet = LOManager.instance.LO_GetObjectDictionary("BlueBullet");
+
+                if (_bullet == null)
                 {
-                    _bullet = LOManager.instance.LO_add("bullet", bullet);
+                    if (bullet.name.Equals("RedBullet"))
+                        _bullet = GetComponent<PowerShipBehaviour>().createBullet("RedBullet");
+                    else if (bullet.name.Equals("BlueBullet"))
+                        _bullet = GetComponent<PowerShipBehaviour>().createBullet("BlueBullet");
                 }
 
                 _bullet.SetActive(true);

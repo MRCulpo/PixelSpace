@@ -82,6 +82,7 @@ public class LOManager : MonoBehaviour
         else
         {
             __object = Instantiate(_object) as GameObject;
+            __object.name = _key;
             __object.SetActive(false);
             LOManagerDictionary[_key].Add(__object);
             return __object;
@@ -150,6 +151,7 @@ public class LOManager : MonoBehaviour
             for (int i = 0; i < _amount; i++)
             {
                 GameObject __object = Instantiate(_object) as GameObject;
+                __object.name = _key;
                 __object.SetActive(false);
                 LOManagerDictionary[_key].Add(__object);
             }

@@ -15,6 +15,11 @@ public class SpaceShipBehaviour : MonoBehaviour
     public SpaceShipShotBehaviour shotBehaviour;
 
     /// <summary>
+    /// referencia do gerenciamento do poder
+    /// </summary>
+    public PowerShipBehaviour powerBehaviour;
+
+    /// <summary>
     /// Velocidade da espaçonave
     /// </summary>
     public float velocity;
@@ -24,7 +29,19 @@ public class SpaceShipBehaviour : MonoBehaviour
     /// </summary>
     private float velocityX, velocityY;
 
+    /// <summary>
+    /// Enumerator verificar qual poder está utilizando
+    /// </summary>
+    private PowerShip powerShip;
 
+    void Awake()
+    {
+        this.powerShip = PowerShip.BluePower;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     void OnEnable()
     {
         inputController.ev_rightControl_right += handleRCR;
@@ -33,11 +50,12 @@ public class SpaceShipBehaviour : MonoBehaviour
         inputController.ev_rightControl_down += handleRCD;
 
         inputController.ev_leftControl_left += handleLCL;
+        inputController.ev_leftControl_right_DOWN += handleLCRDown;
 
     }
-
-
-
+    /// <summary>
+    /// 
+    /// </summary>
     void OnDisable()
     {
         inputController.ev_rightControl_right -= handleRCR;
@@ -46,11 +64,22 @@ public class SpaceShipBehaviour : MonoBehaviour
         inputController.ev_rightControl_down -= handleRCD;
 
         inputController.ev_leftControl_left -= handleLCL;
+        inputController.ev_leftControl_right_DOWN -= handleLCRDown;
+    }
+
+    /// <summary>
+    /// Trocar Shield
+    /// Direita --- Botão esquerdo
+    /// </summary>
+    private void handleLCRDown()
+    {
+        this.powerBehaviour.chargePower(ref powerShip, shotBehaviour);
     }
 
 
     /// <summary>
-    /// Botão Esquerdo
+    /// Atirar
+    /// Direita --- Botão direitp
     /// </summary>
     private void handleLCL()
     {

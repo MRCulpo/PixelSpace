@@ -86,54 +86,54 @@ public class InputController : MonoBehaviour
 
         //#region GET KEY DOWN
 
-        //if (Input.GetKeyDown(this.rightControl_left))
-        //{
-        //    if (this.ev_rightControl_left != null) this.ev_rightControl_left();
-        //}
-        //if (Input.GetKeyDown(this.rightControl_up))
-        //{
-        //    if (this.ev_rightControl_up != null) this.ev_rightControl_up();
-        //}
-        //if (Input.GetKeyDown(this.rightControl_right))
-        //{
-        //    if (this.ev_rightControl_right != null) this.ev_rightControl_right();
-        //}
-        //if (Input.GetKeyDown(this.rightControl_down))
-        //{
-        //    if (this.ev_rightControl_down != null) this.ev_rightControl_down();
-        //}
-        //if (Input.GetKeyDown(this.rightControlUp_Up))
-        //{
-        //    if (this.ev_rightControlUp_Up != null) this.ev_rightControlUp_Up();
-        //}
-        //if (Input.GetKeyDown(this.rightControlUp_Down))
-        //{
-        //    if (this.ev_rightControlUp_Down != null) this.ev_rightControlUp_Down();
-        //}
-        //if (Input.GetKeyDown(this.leftControl_left))
-        //{
-        //    if (this.ev_leftControl_left != null) this.ev_leftControl_left();
-        //}
-        //if (Input.GetKeyDown(this.leftControl_up))
-        //{
-        //    if (this.ev_leftControl_up != null) this.ev_leftControl_up();
-        //}
-        //if (Input.GetKeyDown(this.leftControl_right))
-        //{
-        //    if (this.ev_leftControl_right != null) this.ev_leftControl_right();
-        //}
-        //if (Input.GetKeyDown(this.leftControl_down))
-        //{
-        //    if (this.ev_leftControl_down != null) this.ev_leftControl_down();
-        //}
-        //if (Input.GetKeyDown(this.control_start))
-        //{
-        //    if (this.ev_control_start != null) this.ev_control_start();
-        //}
-        //if (Input.GetKeyDown(this.control_select))
-        //{
-        //    if (this.ev_control_start != null) this.ev_control_start();
-        //}
+        if (Input.GetKeyDown(this.rightControl_left))
+        {
+            if (this.ev_rightControl_left_DOWN != null) this.ev_rightControl_left_DOWN();
+        }
+        if (Input.GetKeyDown(this.rightControl_up))
+        {
+            if (this.ev_rightControl_up_DOWN != null) this.ev_rightControl_up_DOWN();
+        }
+        if (Input.GetKeyDown(this.rightControl_right))
+        {
+            if (this.ev_rightControl_right_DOWN != null) this.ev_rightControl_right_DOWN();
+        }
+        if (Input.GetKeyDown(this.rightControl_down))
+        {
+            if (this.ev_rightControl_down_DOWN != null) this.ev_rightControl_down_DOWN();
+        }
+        if (Input.GetKeyDown(this.rightControlUp_Up))
+        {
+            if (this.ev_rightControlUp_Up_DOWN != null) this.ev_rightControlUp_Up_DOWN();
+        }
+        if (Input.GetKeyDown(this.rightControlUp_Down))
+        {
+            if (this.ev_rightControlUp_Down_DOWN != null) this.ev_rightControlUp_Down_DOWN();
+        }
+        if (Input.GetKeyDown(this.leftControl_left))
+        {
+            if (this.ev_leftControl_left_DOWN != null) this.ev_leftControl_left_DOWN();
+        }
+        if (Input.GetKeyDown(this.leftControl_up))
+        {
+            if (this.ev_leftControl_up_DOWN != null) this.ev_leftControl_up_DOWN();
+        }
+        if (Input.GetKeyDown(this.leftControl_right))
+        {
+            if (this.ev_leftControl_right_DOWN != null) this.ev_leftControl_right_DOWN();
+        }
+        if (Input.GetKeyDown(this.leftControl_down))
+        {
+            if (this.ev_leftControl_down_DOWN != null) this.ev_leftControl_down_DOWN();
+        }
+        if (Input.GetKeyDown(this.control_start))
+        {
+            if (this.ev_control_start_DOWN != null) this.ev_control_start_DOWN();
+        }
+        if (Input.GetKeyDown(this.control_select))
+        {
+            if (this.ev_control_start_DOWN != null) this.ev_control_start_DOWN();
+        }
 
         //#endregion
 
