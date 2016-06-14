@@ -1,6 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
-using System;
+﻿/*
+Description Script:
+Name:
+Date:
+Upgrade:
+*/
+using UnityEngine;
 
 public class SpaceShipBehaviour : MonoBehaviour
 {
@@ -15,9 +19,9 @@ public class SpaceShipBehaviour : MonoBehaviour
     public SpaceShipShotBehaviour shotBehaviour;
 
     /// <summary>
-    /// referencia do gerenciamento do poder
+    /// referencia da SpaceShipAttributesBehaviour
     /// </summary>
-    public PowerShipBehaviour powerBehaviour;
+    public SpaceShipAttributesBehaviour attributesBehaviour;
 
     /// <summary>
     /// Velocidade da espaçonave
@@ -67,13 +71,14 @@ public class SpaceShipBehaviour : MonoBehaviour
         inputController.ev_leftControl_right_DOWN -= handleLCRDown;
     }
 
+
     /// <summary>
     /// Trocar Shield
     /// Direita --- Botão esquerdo
     /// </summary>
     private void handleLCRDown()
     {
-        this.powerBehaviour.chargePower(ref powerShip, shotBehaviour);
+        SpacePixelController.instance.chargePower(ref powerShip, this.shotBehaviour, this.attributesBehaviour.shield);
     }
 
 

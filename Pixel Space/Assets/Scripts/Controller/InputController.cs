@@ -1,7 +1,11 @@
-﻿using UnityEngine;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿/*
+Description Script:
+Name:
+Date:
+Upgrade:
+*/
+using UnityEngine;
+
 public class InputController : MonoBehaviour 
 {
 
@@ -79,7 +83,7 @@ public class InputController : MonoBehaviour
 
     private bool buttonPress = false;
 
-    void FixedUpdate()
+    void Update()
     {
         if (Input.anyKey)
             buttonPress = true;
@@ -254,7 +258,9 @@ public class InputController : MonoBehaviour
         this.notEnyPressButton();
 
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
     void notEnyPressButton()
     {
         if (this.buttonPress && !Input.anyKey)
@@ -262,7 +268,9 @@ public class InputController : MonoBehaviour
             this.eventLastFrame();
         }
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
     void eventLastFrame()
     {
         if (this.ev_last_frame != null)

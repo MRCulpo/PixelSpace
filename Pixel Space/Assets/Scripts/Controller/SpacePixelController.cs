@@ -1,18 +1,18 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿/*
+Description Script:
+Name:
+Date:
+Upgrade:
+*/
+using UnityEngine;
 
-public class PowerShipBehaviour : MonoBehaviour
+public class SpacePixelController : Singleton<SpacePixelController>
 {
     /// <summary>
     /// 
     /// </summary>
     public Power[] powers;
-    /// <summary>
-    /// 
-    /// </summary>
-    public SpriteRenderer shield;
-    /// <summary>
-    /// 
+
     /// </summary>
     void Start()
     {
@@ -27,22 +27,22 @@ public class PowerShipBehaviour : MonoBehaviour
     /// </summary>
     /// <param name="_ship"></param>
     /// <param name="_shotBehaviour"></param>
-    public void chargePower(ref PowerShip _ship, SpaceShipShotBehaviour _shotBehaviour)
+    public void chargePower(ref PowerShip _ship, SpaceShipShotBehaviour _shotBehaviour, SpriteRenderer _shield)
     {
-        if(_ship == PowerShip.BluePower)
+        if (_ship == PowerShip.BluePower)
         {
             _ship = PowerShip.RedPower;
             Power _power = getPower(PowerShip.RedPower.ToString());
 
-            this.shield.sprite = _power.shield;
+            _shield.sprite = _power.shield;
             _shotBehaviour.bullet = _power.bullet;
         }
-        else if(_ship == PowerShip.RedPower)
+        else if (_ship == PowerShip.RedPower)
         {
             _ship = PowerShip.BluePower;
             Power _power = getPower(PowerShip.BluePower.ToString());
 
-            this.shield.sprite = _power.shield;
+            _shield.sprite = _power.shield;
             _shotBehaviour.bullet = _power.bullet;
         }
     }
@@ -69,7 +69,6 @@ public class PowerShipBehaviour : MonoBehaviour
     /// <returns></returns>
     Power getPower(string _namePower)
     {
-        print(_namePower);
         for (int i = 0; i < powers.Length; i++)
         {
             if (powers[i].namePower.Equals(_namePower))
@@ -77,5 +76,4 @@ public class PowerShipBehaviour : MonoBehaviour
         }
         return null;
     }
-
 }

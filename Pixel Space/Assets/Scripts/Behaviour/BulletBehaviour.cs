@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/*
+Description Script:
+Name:
+Date:
+Upgrade:
+*/
+using UnityEngine;
 using System.Collections;
 
 public class BulletBehaviour : MonoBehaviour

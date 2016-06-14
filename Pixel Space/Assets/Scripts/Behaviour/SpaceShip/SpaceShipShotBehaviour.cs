@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/*
+Description Script:
+Name:
+Date:
+Upgrade:
+*/
+using UnityEngine;
 using System.Collections;
 
 public class SpaceShipShotBehaviour : MonoBehaviour
@@ -52,9 +58,9 @@ public class SpaceShipShotBehaviour : MonoBehaviour
                 if (_bullet == null)
                 {
                     if (bullet.name.Equals("RedBullet"))
-                        _bullet = GetComponent<PowerShipBehaviour>().createBullet("RedBullet");
+                        _bullet = SpacePixelController.instance.createBullet("RedBullet");
                     else if (bullet.name.Equals("BlueBullet"))
-                        _bullet = GetComponent<PowerShipBehaviour>().createBullet("BlueBullet");
+                        _bullet = SpacePixelController.instance.createBullet("BlueBullet");
                 }
 
                 _bullet.SetActive(true);

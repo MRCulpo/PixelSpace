@@ -65,11 +65,12 @@
   <ItemGroup>
     <Compile Include="Assets\Extension\Singleton.cs" />
     <Compile Include="Assets\Scripts\Behaviour\BulletBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Behaviour\PowerShipBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Behaviour\SpaceShipBehaviour.cs" />
-    <Compile Include="Assets\Scripts\Behaviour\SpaceShipShotBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Behaviour\SpaceShip\SpaceShipAttributesBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Behaviour\SpaceShip\SpaceShipBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Behaviour\SpaceShip\SpaceShipShotBehaviour.cs" />
     <Compile Include="Assets\Scripts\Class\Power.cs" />
     <Compile Include="Assets\Scripts\Controller\InputController.cs" />
+    <Compile Include="Assets\Scripts\Controller\SpacePixelController.cs" />
     <Compile Include="Assets\Scripts\Manager\CameraManager.cs" />
     <Compile Include="Assets\Scripts\Manager\LOManager.cs" />
   </ItemGroup>

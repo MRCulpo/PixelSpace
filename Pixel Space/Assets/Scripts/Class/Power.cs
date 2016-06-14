@@ -1,4 +1,10 @@
-﻿using UnityEngine;
+﻿/*
+Description Script:
+Name:
+Date:
+Upgrade:
+*/
+using UnityEngine;
 using System.Collections;
 /// <summary>
 /// 
@@ -8,9 +14,7 @@ public enum PowerShip
     RedPower,
     BluePower
 }
-/// <summary>
-/// 
-/// </summary>
+
 [System.Serializable]
 public class Power
 {
