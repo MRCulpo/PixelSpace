@@ -10,18 +10,19 @@ using System.Collections;
 public class SpaceShipShotBehaviour : MonoBehaviour
 {
     /// <summary>
+    /// Referencia dos atributos das naves
+    /// </summary>
+    public SpaceShipAttributesBehaviour refSpaceShipAttributesBehaviour;
+
+    /// <summary>
     /// Bala que vai ser criada
     /// </summary>
-    public GameObject bullet;
-    /// <summary>
-    /// Tempo do disparo entre as balas
-    /// </summary>
-    public float timeShot;
+    private GameObject bullet;
+
     /// <summary>
     /// Posições da onde vai sair a bala
     /// </summary>
     public Transform[] refShotPosition;
-
 
     /// <summary>
     /// Variavel para verificar se pode atirar
@@ -49,21 +50,16 @@ public class SpaceShipShotBehaviour : MonoBehaviour
 
             for(int i = 0; i < refShotPosition.Length; i++)
             {
-                
-                if (bullet.name.Equals("RedBullet"))
-                    _bullet = LOManager.instance.LO_GetObjectDictionary("RedBullet");
-                else if (bullet.name.Equals("BlueBullet"))
-                    _bullet = LOManager.instance.LO_GetObjectDictionary("BlueBullet");
+             
+                _bullet = LOManager.instance.LO_GetObjectDictionary(refSpaceShipAttributesBehaviour.refAttributesPower.bullet.name);
 
                 if (_bullet == null)
-                {
-                    if (bullet.name.Equals("RedBullet"))
-                        _bullet = SpacePixelController.instance.createBullet("RedBullet");
-                    else if (bullet.name.Equals("BlueBullet"))
-                        _bullet = SpacePixelController.instance.createBullet("BlueBullet");
-                }
+                   _bullet = SpacePixelController.instance.createBullet(refSpaceShipAttributesBehaviour.refAttributesPower.bullet.name);
 
                 _bullet.SetActive(true);
+
+                if (_bullet.GetComponent<Bullet>())
+                    _bullet.GetComponent<Bullet>().velocity = refSpaceShipAttributesBehaviour.refAttributesPower.velocity;
 
                 _bullet.transform.position = this.refShotPosition[i].position;
                 _bullet.transform.rotation = this.refShotPosition[i].rotation;
@@ -79,7 +75,7 @@ public class SpaceShipShotBehaviour : MonoBehaviour
     /// <returns></returns>
     IEnumerator nextShot()
     {
-        yield return new WaitForSeconds(this.timeShot);
+        yield return new WaitForSeconds(refSpaceShipAttributesBehaviour.refAttributesPower.timeToShot);
         this.isShot = true;
     }
 }

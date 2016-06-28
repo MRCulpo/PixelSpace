@@ -6,62 +6,53 @@ Upgrade:
 */
 using UnityEngine;
 using System.Collections;
-/// <summary>
-/// 
-/// </summary>
-public enum PowerShip
-{
-    RedPower,
-    BluePower
-}
 
 [System.Serializable]
-public class Power
+public class PowerBullet
 {
+    public enum EnumPowerBullet
+    {
+        DEFAULT,
+        ORACLE
+    }
+
     /// <summary>
-    /// 
+    /// Tipo do enumerador para a bala
     /// </summary>
-    public Sprite shield;
+    public EnumPowerBullet typeBulletPower;
+
     /// <summary>
-    /// 
+    /// Referencia da Bala
     /// </summary>
     public GameObject bullet;
-    /// <summary>
-    /// 
-    /// </summary>
-    public string namePower;
 
     /// <summary>
-    /// 
+    /// Velocidade da bala
     /// </summary>
-    public Power()
-    {
-        this.shield = null;
-        this.bullet = null;
-        this.namePower = "";
-    }
+    public Vector2 velocity;
 
     /// <summary>
-    /// 
+    /// Poder da Bala
     /// </summary>
-    /// <param name="_shield"></param>
-    /// <param name="_bullet"></param>
-    /// <param name="_name"></param>
-    public Power(Sprite _shield, GameObject _bullet, string _name)
-    {
-        this.shield = _shield;
-        this.bullet = _bullet;
-        this.namePower = _name;
-    }
+    public int power;
 
     /// <summary>
-    /// 
+    /// Tempo de cada disparo
     /// </summary>
-    /// <param name="_power"></param>
-    public Power(Power _power)
+    public float timeToShot;
+
+    /// <summary>
+    /// Construtor
+    /// </summary>
+    /// <param name="bullet"></param>
+    /// <param name="velocity"></param>
+    /// <param name="power"></param>
+    /// <param name="timeToShot"></param>
+    public PowerBullet(GameObject bullet, Vector2 velocity, int power, float timeToShot)
     {
-        this.shield = _power.shield;
-        this.bullet = _power.bullet;
-        this.namePower = _power.namePower;
+        this.bullet = bullet;
+        this.velocity = velocity;
+        this.power = power;
+        this.timeToShot = timeToShot;
     }
 }

@@ -6,45 +6,38 @@ Upgrade:
 */
 using UnityEngine;
 
+
+public enum StateGame
+{
+    Play,
+    Pause,
+    Over
+}
+
 public class SpacePixelController : Singleton<SpacePixelController>
 {
     /// <summary>
-    /// 
+    /// Os poderes que todas as naves podem ter para poder atirar
     /// </summary>
-    public Power[] powers;
+    public PowerBullet[] powers;
+
+    /// <summary>
+    /// Os Shields que as naves podem ter
+    /// </summary>
+    public Shield[] shields;
+
+    /// <summary>
+    /// Estado onde o jogo se encontra
+    /// </summary>
+    public StateGame stateGame { get; set; }
 
     /// </summary>
     void Start()
     {
+        this.stateGame = StateGame.Play;
+
         for (int i = 0; i < powers.Length; i++)
-        {
             LOManager.instance.LO_createList(powers[i].bullet.name, powers[i].bullet, 5);
-        }
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="_ship"></param>
-    /// <param name="_shotBehaviour"></param>
-    public void chargePower(ref PowerShip _ship, SpaceShipShotBehaviour _shotBehaviour, SpriteRenderer _shield)
-    {
-        if (_ship == PowerShip.BluePower)
-        {
-            _ship = PowerShip.RedPower;
-            Power _power = getPower(PowerShip.RedPower.ToString());
-
-            _shield.sprite = _power.shield;
-            _shotBehaviour.bullet = _power.bullet;
-        }
-        else if (_ship == PowerShip.RedPower)
-        {
-            _ship = PowerShip.BluePower;
-            Power _power = getPower(PowerShip.BluePower.ToString());
-
-            _shield.sprite = _power.shield;
-            _shotBehaviour.bullet = _power.bullet;
-        }
     }
 
     /// <summary>
@@ -63,15 +56,30 @@ public class SpacePixelController : Singleton<SpacePixelController>
     }
 
     /// <summary>
-    /// 
+    /// Metodo para retornar o Escudo como parametro o tipo do Escudo
     /// </summary>
-    /// <param name="_namePower"></param>
+    /// <param name="_type"></param>
     /// <returns></returns>
-    Power getPower(string _namePower)
+    public Shield getShield(Shield.ShieldsType _type)
+    {
+        for (int i = 0; i < shields.Length; i++)
+        {
+            if (shields[i].shieldType.Equals(_type))
+                return shields[i];
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// Metodo para retornar as configurações como parametro o tipo do "Bullet"
+    /// </summary>
+    /// <param name="_type"></param>
+    /// <returns></returns>
+    public PowerBullet getPowerBullet(PowerBullet.EnumPowerBullet _type)
     {
         for (int i = 0; i < powers.Length; i++)
         {
-            if (powers[i].namePower.Equals(_namePower))
+            if (powers[i].typeBulletPower.Equals(_type))
                 return powers[i];
         }
         return null;

@@ -21,7 +21,7 @@ public class SpaceShipBehaviour : MonoBehaviour
     /// <summary>
     /// referencia da SpaceShipAttributesBehaviour
     /// </summary>
-    public SpaceShipAttributesBehaviour attributesBehaviour;
+    public SpaceShipAttributesBehaviour refAttributesBehaviour;
 
     /// <summary>
     /// Velocidade da espaçonave
@@ -32,16 +32,6 @@ public class SpaceShipBehaviour : MonoBehaviour
     /// Velocidade em X e Y
     /// </summary>
     private float velocityX, velocityY;
-
-    /// <summary>
-    /// Enumerator verificar qual poder está utilizando
-    /// </summary>
-    private PowerShip powerShip;
-
-    void Awake()
-    {
-        this.powerShip = PowerShip.BluePower;
-    }
 
     /// <summary>
     /// 
@@ -78,7 +68,8 @@ public class SpaceShipBehaviour : MonoBehaviour
     /// </summary>
     private void handleLCRDown()
     {
-        SpacePixelController.instance.chargePower(ref powerShip, this.shotBehaviour, this.attributesBehaviour.shield);
+        if (SpacePixelController.instance.stateGame == StateGame.Play)
+            refAttributesBehaviour.swapShield();
     }
 
 
@@ -88,7 +79,8 @@ public class SpaceShipBehaviour : MonoBehaviour
     /// </summary>
     private void handleLCL()
     {
-        this.shotBehaviour.shot();
+        if (SpacePixelController.instance.stateGame == StateGame.Play)
+            this.shotBehaviour.shot();
     }
 
     /// <summary>
@@ -96,9 +88,12 @@ public class SpaceShipBehaviour : MonoBehaviour
     /// </summary>
     private void handleRCD()
     {
-        this.velocityY = -this.velocity;
-        this.velocityX = 0;
-        move(this.velocityX, this.velocityY);
+        if (SpacePixelController.instance.stateGame == StateGame.Play)
+        {
+            this.velocityY = -this.velocity;
+            this.velocityX = 0;
+            move(this.velocityX, this.velocityY);
+        }
     }
 
     /// <summary>
@@ -106,9 +101,12 @@ public class SpaceShipBehaviour : MonoBehaviour
     /// </summary>
     private void handleRCL()
     {
-        this.velocityX = -this.velocity;
-        this.velocityY = 0;
-        move(this.velocityX, this.velocityY);
+        if (SpacePixelController.instance.stateGame == StateGame.Play)
+        {
+            this.velocityX = -this.velocity;
+            this.velocityY = 0;
+            move(this.velocityX, this.velocityY);
+        }
     }
 
     /// <summary>
@@ -116,9 +114,12 @@ public class SpaceShipBehaviour : MonoBehaviour
     /// </summary>
     private void handleRCU()
     {
-        this.velocityY = this.velocity;
-        this.velocityX = 0;
-        move(this.velocityX, this.velocityY);
+        if (SpacePixelController.instance.stateGame == StateGame.Play)
+        {
+            this.velocityY = this.velocity;
+            this.velocityX = 0;
+            move(this.velocityX, this.velocityY);
+        }
     }
 
 
@@ -127,13 +128,16 @@ public class SpaceShipBehaviour : MonoBehaviour
     /// </summary>
     private void handleRCR()
     {
-        this.velocityX = this.velocity;
-        this.velocityY = 0;
-        move(this.velocityX, this.velocityY);
+        if (SpacePixelController.instance.stateGame == StateGame.Play)
+        {
+            this.velocityX = this.velocity;
+            this.velocityY = 0;
+            move(this.velocityX, this.velocityY);
+        }
     }
 
     void move(float _velocityX, float _velocityY)
     {
-        transform.Translate(_velocityX * Time.deltaTime , _velocityY * Time.deltaTime, 0f);
+        transform.Translate(_velocityX * Time.deltaTime, _velocityY * Time.deltaTime, 0f);
     }
 }
