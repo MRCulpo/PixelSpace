@@ -45,10 +45,10 @@ public class CameraManager : Singleton<CameraManager>
         Vector3 _positionMax = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
 
         this.bottomLeft = _positionZero.x;
-        this.bottomUp = _positionZero.y;
+        this.bottomDown = _positionZero.y;
 
         this.bottomRight = _positionMax.x;
-        this.bottomDown = _positionMax.y;
+        this.bottomUp = _positionMax.y;
     }
 
 }

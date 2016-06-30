@@ -13,6 +13,8 @@ public class PowerBullet
     public enum EnumPowerBullet
     {
         DEFAULT,
+        DAFAULTFOURSHOOT,
+        DEFAULTTREESHOOT,
         ORACLE
     }
 
@@ -21,6 +23,7 @@ public class PowerBullet
     /// </summary>
     public EnumPowerBullet typeBulletPower;
 
+    public Transform[] refPositionBullets;
     /// <summary>
     /// Referencia da Bala
     /// </summary>

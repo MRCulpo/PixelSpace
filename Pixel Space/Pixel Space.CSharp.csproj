@@ -66,6 +66,7 @@
     <Compile Include="Assets\Extension\Singleton.cs" />
     <Compile Include="Assets\Scripts\Behaviour\Bullets\BulletDefaultBehaviour.cs" />
     <Compile Include="Assets\Scripts\Behaviour\Bullets\BulletOracleBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Behaviour\Power\PowerUpBehaviour.cs" />
     <Compile Include="Assets\Scripts\Behaviour\SpaceShip\SpaceShipAttributesBehaviour.cs" />
     <Compile Include="Assets\Scripts\Behaviour\SpaceShip\SpaceShipBehaviour.cs" />
     <Compile Include="Assets\Scripts\Behaviour\SpaceShip\SpaceShipShotBehaviour.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\Scripts\Class\Shield.cs" />
     <Compile Include="Assets\Scripts\Controller\InputController.cs" />
     <Compile Include="Assets\Scripts\Controller\SpacePixelController.cs" />
+    <Compile Include="Assets\Scripts\Controller\SpacePowerUpController.cs" />
     <Compile Include="Assets\Scripts\Interface\IBullet.cs" />
     <Compile Include="Assets\Scripts\Manager\CameraManager.cs" />
     <Compile Include="Assets\Scripts\Manager\LOManager.cs" />

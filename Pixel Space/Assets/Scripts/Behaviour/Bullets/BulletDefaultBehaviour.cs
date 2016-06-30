@@ -27,7 +27,7 @@ public class BulletDefaultBehaviour : Bullet
 
     public override void checkEnds()
     {
-        if (transform.position.y < CameraManager.instance.bottomUp || transform.position.y > CameraManager.instance.bottomDown ||
+        if (transform.position.y < CameraManager.instance.bottomDown || transform.position.y > CameraManager.instance.bottomUp ||
             transform.position.x > CameraManager.instance.bottomRight || transform.position.x < CameraManager.instance.bottomLeft)
         {
             //desliga o objeto se ele estive fora da Screen do Usuario

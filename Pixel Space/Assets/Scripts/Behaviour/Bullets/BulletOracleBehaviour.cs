@@ -4,8 +4,8 @@ using System;
 
 public class BulletOracleBehaviour : Bullet
 {
-
-    public Vector3 myScale = Vector3.zero;
+    public Transform render;
+    Vector3 myScale = Vector3.zero;
 
     void OnEnable()
     {
@@ -35,7 +35,7 @@ public class BulletOracleBehaviour : Bullet
 
     public override void checkEnds()
     {
-        if (transform.position.y < CameraManager.instance.bottomUp || transform.position.y > CameraManager.instance.bottomDown ||
+        if (transform.position.y < CameraManager.instance.bottomDown || transform.position.y > CameraManager.instance.bottomUp ||
             transform.position.x > CameraManager.instance.bottomRight || transform.position.x < CameraManager.instance.bottomLeft)
         {
             //desliga o objeto se ele estive fora da Screen do Usuario
@@ -50,6 +50,7 @@ public class BulletOracleBehaviour : Bullet
     {
         //Movimenta o objeto sempre em Y positivo
         transform.Translate(new Vector3(velocity.x, velocity.y * Time.deltaTime));
+        render.Rotate(new Vector3(0,0,180) * Time.deltaTime);
     }
 
     /// <summary>
@@ -66,7 +67,7 @@ public class BulletOracleBehaviour : Bullet
     /// <returns></returns>
     public override IEnumerator bulletCoroutine()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
 
         gameObject.transform.localScale += gameObject.transform.localScale*0.15f;
 

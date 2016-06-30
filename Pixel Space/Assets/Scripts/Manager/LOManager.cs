@@ -195,6 +195,31 @@ public class LOManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Responsável por retornar um objeto que está disponivel para ser usado dentro da lista de objeto
+    /// </summary>
+    /// <param name="_key"> Referência na qual a lista está armazenando os objetos que podem estar disponiveis </param>
+    /// <returns></returns>
+    public GameObject LO_GetObjectDictionaryToCreate(string _key, GameObject _obj)
+    {
+
+        if (LOManagerDictionary.ContainsKey(_key))
+        {
+            List<GameObject> _newList;
+            LOManagerDictionary.TryGetValue(_key, out _newList);
+            //_newList.shuffleList();
+            for (int i = 0; i < _newList.Count; i++)
+            {
+                if (!_newList[i].activeSelf)
+                {
+                    return _newList[i];
+                }
+            }
+        }
+
+        return LO_add(_key, _obj);
+    }
+
+    /// <summary>
     /// Responsável por desabilitar todos os objetos da lista que é comparado com a chave
     /// </summary>
     /// <param name="_key"></param>

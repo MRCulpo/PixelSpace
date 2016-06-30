@@ -48,7 +48,7 @@ public class SpaceShipShotBehaviour : MonoBehaviour
         {
             this.isShot = false;
 
-            for(int i = 0; i < refShotPosition.Length; i++)
+            for(int i = 0; i < refSpaceShipAttributesBehaviour.refAttributesPower.refPositionBullets.Length; i++)
             {
              
                 _bullet = LOManager.instance.LO_GetObjectDictionary(refSpaceShipAttributesBehaviour.refAttributesPower.bullet.name);
@@ -61,8 +61,8 @@ public class SpaceShipShotBehaviour : MonoBehaviour
                 if (_bullet.GetComponent<Bullet>())
                     _bullet.GetComponent<Bullet>().velocity = refSpaceShipAttributesBehaviour.refAttributesPower.velocity;
 
-                _bullet.transform.position = this.refShotPosition[i].position;
-                _bullet.transform.rotation = this.refShotPosition[i].rotation;
+                _bullet.transform.position = refSpaceShipAttributesBehaviour.refAttributesPower.refPositionBullets[i].position;
+                _bullet.transform.rotation = refSpaceShipAttributesBehaviour.refAttributesPower.refPositionBullets[i].rotation;
             }
 
             StartCoroutine(nextShot());

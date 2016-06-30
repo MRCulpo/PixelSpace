@@ -40,4 +40,27 @@ public class SpaceShipAttributesBehaviour : MonoBehaviour
             shield.sprite = refAttributesShield.sprite;
         }
     }
+    /// <summary>
+    /// Metodo para fazer a troca de PowerUp
+    /// </summary>
+    /// <param name="_type"></param>
+    public void swapPower(PowerBullet.EnumPowerBullet _type)
+    {
+        refAttributesPower = SpacePixelController.instance.getPowerBullet(_type);
+    }
+
+    /// <summary>
+    /// Colisão Trigger dentro do comportamento do Behaviour 
+    /// *Power
+    /// *Shield
+    /// </summary>
+    /// <param name="other"></param>
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.GetComponent<PowerUpBehaviour>())
+        {
+            swapPower(other.GetComponent<PowerUpBehaviour>().typePower);
+            other.gameObject.SetActive(false);
+        }
+    }
 }
