@@ -8,11 +8,7 @@ public class Shield
     /// <summary>
     /// Enumarador dos tipos de escudos
     /// </summary>
-    public enum ShieldsType
-    {
-        BLUE,
-        RED
-    }
+
 
     /// <summary>
     /// Tipo de Escudo que tem

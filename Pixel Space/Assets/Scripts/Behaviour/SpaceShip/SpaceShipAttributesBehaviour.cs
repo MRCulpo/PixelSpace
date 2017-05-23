@@ -29,14 +29,14 @@ public class SpaceShipAttributesBehaviour : MonoBehaviour
     /// </summary>
     public void swapShield()
     {
-        if(refAttributesShield.shieldType.Equals(Shield.ShieldsType.BLUE))
+        if(refAttributesShield.shieldType.Equals(ShieldsType.BLUE))
         {
-            refAttributesShield.swapShield(SpacePixelController.instance.getShield(Shield.ShieldsType.RED));
+            refAttributesShield.swapShield(SpacePixelController.instance.getShield(ShieldsType.RED));
             shield.sprite = refAttributesShield.sprite;
         }
-        else if (refAttributesShield.shieldType.Equals(Shield.ShieldsType.RED))
+        else if (refAttributesShield.shieldType.Equals(ShieldsType.RED))
         {
-            refAttributesShield.swapShield(SpacePixelController.instance.getShield(Shield.ShieldsType.BLUE));
+            refAttributesShield.swapShield(SpacePixelController.instance.getShield(ShieldsType.BLUE));
             shield.sprite = refAttributesShield.sprite;
         }
     }
@@ -44,7 +44,7 @@ public class SpaceShipAttributesBehaviour : MonoBehaviour
     /// Metodo para fazer a troca de PowerUp
     /// </summary>
     /// <param name="_type"></param>
-    public void swapPower(PowerBullet.EnumPowerBullet _type)
+    public void swapPower(EnumPowerBullet _type)
     {
         refAttributesPower = SpacePixelController.instance.getPowerBullet(_type);
     }

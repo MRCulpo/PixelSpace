@@ -8,7 +8,7 @@ public class PowerUpBehaviour : MonoBehaviour
     /// <summary>
     /// tipo do power
     /// </summary>
-    public PowerBullet.EnumPowerBullet typePower;
+    public EnumPowerBullet typePower;
     /// <summary>
     /// tamanho do objeto
     /// </summary>

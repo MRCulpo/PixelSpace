@@ -7,12 +7,6 @@ Upgrade:
 using UnityEngine;
 
 
-public enum StateGame
-{
-    Play,
-    Pause,
-    Over
-}
 
 public class SpacePixelController : Singleton<SpacePixelController>
 {
@@ -60,7 +54,7 @@ public class SpacePixelController : Singleton<SpacePixelController>
     /// </summary>
     /// <param name="_type"></param>
     /// <returns></returns>
-    public Shield getShield(Shield.ShieldsType _type)
+    public Shield getShield(ShieldsType _type)
     {
         for (int i = 0; i < shields.Length; i++)
         {
@@ -75,7 +69,7 @@ public class SpacePixelController : Singleton<SpacePixelController>
     /// </summary>
     /// <param name="_type"></param>
     /// <returns></returns>
-    public PowerBullet getPowerBullet(PowerBullet.EnumPowerBullet _type)
+    public PowerBullet getPowerBullet(EnumPowerBullet _type)
     {
         for (int i = 0; i < powers.Length; i++)
         {

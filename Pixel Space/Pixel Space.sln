@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pixel Space.CSharp", "Pixel Space.CSharp.csproj", "{A82B57F4-9E1F-A71E-9FA2-0F2DD56608CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pixel Space", "Pixel Space.csproj", "{D8E11FC0-EAE6-4C85-7A94-B01C0A87BF39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A82B57F4-9E1F-A71E-9FA2-0F2DD56608CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A82B57F4-9E1F-A71E-9FA2-0F2DD56608CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A82B57F4-9E1F-A71E-9FA2-0F2DD56608CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A82B57F4-9E1F-A71E-9FA2-0F2DD56608CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8E11FC0-EAE6-4C85-7A94-B01C0A87BF39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8E11FC0-EAE6-4C85-7A94-B01C0A87BF39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8E11FC0-EAE6-4C85-7A94-B01C0A87BF39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8E11FC0-EAE6-4C85-7A94-B01C0A87BF39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

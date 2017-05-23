@@ -5,25 +5,27 @@ Date:
 Upgrade:
 */
 using UnityEngine;
-using System.Collections;
 
-[System.Serializable]
-public class PowerBullet
+[CreateAssetMenu(fileName = "Bullet", menuName = "Inventory/Bullet", order = 1)]
+public class PowerBullet : ScriptableObject
 {
-    public enum EnumPowerBullet
-    {
-        DEFAULT,
-        DAFAULTFOURSHOOT,
-        DEFAULTTREESHOOT,
-        ORACLE
-    }
 
     /// <summary>
     /// Tipo do enumerador para a bala
     /// </summary>
     public EnumPowerBullet typeBulletPower;
 
+    /// <summary>
+    /// Nome das Referencias aonde deve procurar
+    /// </summary>
+    public string[] refNamePosition;
+
+    /// <summary>
+    /// Referencia das posições de onde a bala vai sair
+    /// </summary>
+    [HideInInspector]
     public Transform[] refPositionBullets;
+
     /// <summary>
     /// Referencia da Bala
     /// </summary>
@@ -43,19 +45,4 @@ public class PowerBullet
     /// Tempo de cada disparo
     /// </summary>
     public float timeToShot;
-
-    /// <summary>
-    /// Construtor
-    /// </summary>
-    /// <param name="bullet"></param>
-    /// <param name="velocity"></param>
-    /// <param name="power"></param>
-    /// <param name="timeToShot"></param>
-    public PowerBullet(GameObject bullet, Vector2 velocity, int power, float timeToShot)
-    {
-        this.bullet = bullet;
-        this.velocity = velocity;
-        this.power = power;
-        this.timeToShot = timeToShot;
-    }
 }
